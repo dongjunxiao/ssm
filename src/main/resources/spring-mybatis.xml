@@ -19,10 +19,8 @@
 
     <!-- 配置获取连接等待超时的时间 -->
     <property name="maxWait" value="${jdbc.maxWait}"/>
-
     <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
     <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}"/>
-
     <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
     <property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}"/>
 
@@ -33,11 +31,15 @@
 
     <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
     <property name="poolPreparedStatements" value="${jdbc.poolPreparedStatements}"/>
-    <property name="maxPoolPreparedStatementPerConnectionSize"
-              value="${jdbc.maxPoolPreparedStatementPerConnectionSize}"/>
-
+    <property name="maxPoolPreparedStatementPerConnectionSize" value="${jdbc.maxPoolPreparedStatementPerConnectionSize}"/>
     <!-- 配置监控统计拦截的filters -->
     <property name="filters" value="${jdbc.filters}"/>
+    <!-- 是否在自动回收超时连接的时候打印连接的超时错误 -->
+    <property name="removeAbandoned" value="${jdbc.removeAbandoned}"/>
+    <!-- 超时时间(以秒数为单位) -->
+    <property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}"/>
+    <!-- 是否在自动回收超时连接的时候打印连接的超时错误 -->
+    <property name="logAbandoned" value="${jdbc.logAbandoned}"/>
   </bean>
 
   <!-- spring和MyBatis整合，不需要mybatis的配置映射文件 -->
